@@ -6,6 +6,12 @@ import javax.swing.JFrame;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JTextPane;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.SystemColor;
 
 public class ApplicationPanel {
 
@@ -43,22 +49,38 @@ public class ApplicationPanel {
 		
 		frame = new JFrame();
 		frame.setTitle("Sports Application");
-		frame.setBounds(100, 100, 400, 400);
+		frame.setBounds(100, 100, 800, 578);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(12, 13, 150, 35);
+		comboBox.setBackground(SystemColor.inactiveCaption);
+		comboBox.setBounds(12, 75, 150, 35);
 		comboBox.addItem(data.viewMatchDataMLS());
-		comboBox.addItem(data.viewMatchDataNFL());
+		//comboBox.addItem(data.viewMatchDataNFL());
 		frame.getContentPane().add(comboBox);
 		
-		JButton btnNewButton = new JButton("Submit");
-		btnNewButton.setBounds(219, 13, 150, 35);
-		frame.getContentPane().add(btnNewButton);
+		JButton btnSelect = new JButton("Select");
+		btnSelect.setBackground(SystemColor.inactiveCaption);
+		btnSelect.setBounds(174, 75, 150, 35);
+		frame.getContentPane().add(btnSelect);
 		
 		JTextPane textPane = new JTextPane();
-		textPane.setBounds(12, 61, 357, 281);
+		textPane.setBackground(SystemColor.control);
+		textPane.setBounds(12, 139, 758, 376);
 		frame.getContentPane().add(textPane);
+		
+		JLabel lblCategory = new JLabel("Sports Category");
+		lblCategory.setBounds(12, 27, 150, 35);
+		frame.getContentPane().add(lblCategory);
+		
+		JTextArea txtSearchTeam = new JTextArea();
+		txtSearchTeam.setBounds(620, 75, 150, 35);
+		frame.getContentPane().add(txtSearchTeam);
+		
+		JButton btnSearchTeam = new JButton("Search Team");
+		btnSearchTeam.setBackground(SystemColor.inactiveCaption);
+		btnSearchTeam.setBounds(458, 75, 150, 35);
+		frame.getContentPane().add(btnSearchTeam);
 	}
 }
