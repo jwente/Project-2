@@ -7,7 +7,8 @@ import java.util.ArrayList;
 public class ReadMatchData {
 	
 	//Read MLS file
-	String mlsFile = "/home/jlcas/workspace/TestP2/src/mls.txt";
+	//String mlsFile = "/home/jlcas/workspace/TestP2/src/mls.txt";
+	String mlsFile = "./src/mls.txt";
 	private ArrayList<MatchData> mlsList;
 	int count = 0;
 	
