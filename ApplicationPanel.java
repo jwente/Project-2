@@ -1,4 +1,5 @@
-package project_2;
+package testp2;
+
 
 import java.awt.EventQueue;
 
@@ -12,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.SystemColor;
+import javax.swing.JScrollPane;
 
 public class ApplicationPanel {
 
@@ -53,10 +55,12 @@ public class ApplicationPanel {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JComboBox comboBox = new JComboBox();
+		String sports[] = {"MLS", "NFL", "NBA", "MLB"};
+		JComboBox comboBox = new JComboBox(sports);
+		
 		comboBox.setBackground(SystemColor.inactiveCaption);
 		comboBox.setBounds(12, 75, 150, 35);
-		comboBox.addItem(data.viewMatchDataMLS());
+		//comboBox.addItem(data.getSportType());
 		//comboBox.addItem(data.viewMatchDataNFL());
 		frame.getContentPane().add(comboBox);
 		
@@ -65,10 +69,18 @@ public class ApplicationPanel {
 		btnSelect.setBounds(174, 75, 150, 35);
 		frame.getContentPane().add(btnSelect);
 		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(12, 139, 758, 376);
+		frame.getContentPane().add(scrollPane);
+		
 		JTextPane textPane = new JTextPane();
+		scrollPane.setViewportView(textPane);
 		textPane.setBackground(SystemColor.control);
-		textPane.setBounds(12, 139, 758, 376);
-		frame.getContentPane().add(textPane);
+		
+		if(comboBox.getSelectedItem() == "MLS")
+			textPane.setText(data.viewMatchDataMLS());
+		else if (comboBox.getSelectedItem() == "MLB")
+			textPane.setText(data.viewMatchDataMLB());
 		
 		JLabel lblCategory = new JLabel("Sports Category");
 		lblCategory.setBounds(12, 27, 150, 35);

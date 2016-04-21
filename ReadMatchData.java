@@ -9,12 +9,17 @@ public class ReadMatchData {
 	//Read MLS file
 	//String mlsFile = "/home/jlcas/workspace/TestP2/src/mls.txt";
 	String mlsFile = "./src/mls.txt";
+	String mlbFile = "./src/mlb.txt";
+	
 	private ArrayList<MatchData> mlsList;
+	private ArrayList<MatchData> mlbList;
+	
 	int count = 0;
 	
 	ReadMatchData()
 	{
 		readMLS();
+		readMLB();
 	}
 
 	public void readMLS()
@@ -62,8 +67,83 @@ public class ReadMatchData {
 		catch(IOException ex) { System.out.println("I/O error"); }
 	}
 	
+	private void readMLB() {
+
+		try{
+			//Read text from mls file
+			//System.out.println("Attempting mlsFile read");
+			FileReader fileReader = new FileReader(mlbFile);
+			
+			//Wrap fileReader in BufferReader
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			
+			mlbFile = bufferedReader.readLine();
+			mlbList = new ArrayList<>();
+					
+			while(mlbFile != null)
+			{
+				//Assign variable data from MLS file
+				String[] mlbData = mlbFile.split(", ");
+				String teamName1 = mlbData[0];
+				String tmpscore1 = mlbData[1];
+				String teamName2 = mlbData[2];
+				String tmpscore2 = mlbData[3];
+				String matchWeekday = mlbData[4];
+				String matchMnth = mlbData[5];
+				String matchDay = mlbData[6];
+				String matchYear = mlbData[7];
+				
+				int score1 = Integer.parseInt(tmpscore1.toString());
+				int score2 = Integer.parseInt(tmpscore2.toString());
+				
+				//Create MatchData object
+				MatchData mlbMatch = new MatchData("MLB", teamName1, teamName2, matchWeekday, matchMnth, 
+						matchDay, matchYear, score1, score2);
+				
+				//Add to mlsList arrayList
+				mlbList.add(mlbMatch);
+				count++;
+				mlbFile = bufferedReader.readLine();
+			}		
+			
+			bufferedReader.close();			
+			
+		}catch(FileNotFoundException ex) { System.out.println("File not found"); }
+		catch(IOException ex) { System.out.println("I/O error"); }
+	}
+	
+	public String viewMatchDataMLS()
+	{
+		String result = "";
+		
+		//result = mlsList.get(0).getSportType();
+		
+		//Iterate through mlsList Array List and concatenate all mls contents into String result
+		for(int i = 0; i < mlsList.size(); i++)
+		{
+			result += (mlsList.get(i).toString());
+			//result += (mlsList.get(i).getTeamName1() + " " + mlsList.get(i).getScore1());
+			
+		}
+		
+		return result;
+	}
+	
+	public String viewMatchDataMLB()
+	{
+		String result = "";
+				
+		for(int i = 0; i < mlbList.size(); i++)
+		{
+			result += (mlbList.get(i).toString());			
+		}
+		return result;
+	}
+	
+	/*
 	public void viewMatchDataMLS()
 	{
+		
 		System.out.println(mlsList.get(0).getSportType());
 		for(int i = 0; i < mlsList.size(); i++)
 		{
@@ -71,6 +151,6 @@ public class ReadMatchData {
 			System.out.println(mlsList.get(i).getTeamName1() + " " + mlsList.get(i).getScore1());
 			
 		}
-	}
+	}*/
 
 }
