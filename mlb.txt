@@ -1,0 +1,56 @@
+Spartans, 6, Phillies, 2, Sunday, March, 1, 2015
+Panthers, 2, Marlins, 7, Monday, March, 2, 2015
+Mocs, 2, Tigers, 12, Monday, March, 2, 2015
+Orioles, 2, Tigers, 15, Tuesday, March, 3, 2015
+Yankees, 5, Phillies, 5, Tuesday, March, 3, 2015
+Huskies, 1, Red Sox, 2, Tuesday, March, 3, 2015
+Eagles, 0, Red Sox, 1, Tuesday, March, 3, 2015
+Hurricanes, 7, Marlins, 1, Tuesday, March, 3, 2015
+Pirates, 8, Blue Jays, 7, Tuesday, March, 3, 2015
+Indians, 0, Reds, 10, Tuesday, March, 3, 2015
+Giants, 4, Athletics, 9, Tuesday, March, 3, 2015
+Sun Devils, 0, D-Backs, 4, Tuesday, March, 3, 2015
+Tigers, 5, Orioles, 4, Wednesday, March, 4, 2015
+Mets, 8, Braves, 2, Wednesday, March, 4, 2015
+Phillies, 3, Yankees, 1, Wednesday, March, 4, 2015
+Blue Jays, 4, Pirates, 1, Wednesday, March, 4, 2015
+White Sox, 6, Dodgers, 4, Wednesday, March, 4, 2015
+Reds, 2, Indians, 4, Wednesday, March, 4, 2015
+Royals, 13, Rangers, 2, Wednesday, March, 4, 2015
+A's, 9, Giants, 2, Wednesday, March, 4, 2015
+Padres, 3, Mariners, 4, Wednesday, March, 4, 2015
+D-Backs, 6, Rockies, 2, Wednesday, March, 4, 2015
+Panthers, 0, Brewers, 8, Wednesday, March, 4, 2015
+Gophers, 1, Twins, 3, Wednesday, March, 4, 2015
+Braves, 6, Tigers, 4, Thursday, March, 5, 2015
+Orioles, 3, Rays, 2, Thursday, March, 5, 2015
+Yankees, 2, Pirates, 1, Thursday, March, 5, 2015
+Phillies, 3, Astros, 6, Thursday, March, 5, 2015
+Cardinals, 4, Marlins, 1, Thursday, March, 5, 2015
+Cubs, 6, Giants, 8, Thursday, March, 5, 2015
+Indians, 9, Reds, 3, Thursday, March, 5, 2015
+Dodgers, 6, White Sox, 1, Thursday, March, 5, 2015
+Brewers, 2, Angels, 3, Thursday, March, 5, 2015
+A's, 2, Cubs, 2, Thursday, March, 5, 2015
+Padres, 4, Mariners, 9, Thursday, March, 5, 2015
+Rangers, 4, Royals, 5, Thursday, March, 5, 2015
+Rockies, 3, D-Backs, 4, Thursday, March, 5, 2015
+Mets, 4, Nationals, 5, Thursday, March, 5, 2015
+Red Sox, 8, Twins, 9, Thursday, March, 5, 2015
+Blue Jays, 0, Orioles, 5, Thursday, March, 5, 2015
+Astros, 2, Cardinals, 5, Friday, March, 6, 2015
+Marlins, 5, Red Sox, 3, Friday, March, 6, 2015
+Twins, 1, Rays, 2, Friday, March, 6, 2015
+Yankees, 4, Phillies, 1, Friday, March, 6, 2015
+Nationals, 9, Braves, 8, Friday, March, 6, 2015
+Orioles, 4, Blue Jays, 5, Friday, March, 6, 2015
+Tigers, 4, Mets, 5, Friday, March, 6, 2015
+White Sox, 0, Padres, 5, Friday, March, 6, 2015
+Reds, 5, Cubs, 2, Friday, March, 6, 2015
+Royals, 11, Indians, 9, Friday, March, 6, 2015
+Dodgers, 10, Brewers, 1, Friday, March, 6, 2015
+Giants, 12, Rangers, 3, Friday, March, 6, 2015
+Mariners, 4, Dodgers, 7, Friday, March, 6, 2015
+Rockies, 0, Angels, 3, Friday, March, 6, 2015
+A's, 7, D-Backs, 2, Friday, March, 6, 2015
+Pirates, 3, Yankees, 1, Friday, March, 6, 2015
