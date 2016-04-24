@@ -259,39 +259,70 @@ public class ReadMatchData {
 		return result;
 	}
 	
-		public String searchTeam(String sport, String team)
+	public String searchTeam(String sport, String team)
 	{
 		String searchInSport = sport;
-		String searchTeam = team;
+		String searchTeam = "";
+		//String searchTeam = team.substring(0, 1).toUpperCase() + team.substring(1);
 		String result = "";
 		
+		//http://www.tutorialspoint.com/javaexamples/regular_case.htm
+		//Capitalize first letter in team name
+	    StringBuffer strbf = new StringBuffer();
+	    Matcher m = Pattern.compile("([a-z])([a-z]*)",
+	    Pattern.CASE_INSENSITIVE).matcher(team);
+	    while (m.find()) {
+	       m.appendReplacement(strbf, 
+	       m.group(1).toUpperCase() + m.group(2).toLowerCase());
+	    }  
+	    searchTeam = m.appendTail(strbf).toString();
+		
+		//System.out.println("Search Sport: " + searchInSport + " Team: " + searchTeam);
+		
 		if(searchInSport == "MLS") //search the mlsList array
-		{
 			for(int i = 0; i < mlsList.size(); i++)
 			{
 				if(mlsList.get(i).getTeamName1().contains(searchTeam) || 
 						mlsList.get(i).getTeamName2().contains(searchTeam))
 				{
 					result += (mlsList.get(i).getTeamName1() + " " + mlsList.get(i).getScore1() + " | "
-							+ mlsList.get(i).getTeamName2() + " " + mlsList.get(i).getScore2());
+							+ mlsList.get(i).getTeamName2() + " " + mlsList.get(i).getScore2()) + "\n\n";
 				}
 			}
-			
-		}
+		else if(searchInSport == "MLB")
+			for(int i = 0; i < mlbList.size(); i++)
+			{
+				if(mlbList.get(i).getTeamName1().contains(searchTeam) ||
+						mlbList.get(i).getTeamName2().contains(searchTeam))
+				{
+					result += (mlbList.get(i).getTeamName1() + " " + mlbList.get(i).getScore1() + " | "
+							+ mlbList.get(i).getTeamName2() + " " + mlbList.get(i).getScore2()) + "\n\n";
+				}
+			}
+		else if(searchInSport == "NBA")
+			for(int i = 0; i < nbaList.size(); i++)
+			{
+				if(nbaList.get(i).getTeamName1().contains(searchTeam) ||
+						nbaList.get(i).getTeamName2().contains(searchTeam))
+				{
+					result += (nbaList.get(i).getTeamName1() + " " + nbaList.get(i).getScore1() + " | "
+							+ nbaList.get(i).getTeamName2() + " " + nbaList.get(i).getScore2()) + "\n\n";
+				}
+			}
+		else if(searchInSport == "NFL")
+			for(int i = 0; i < nflList.size(); i++)
+			{
+				if(nflList.get(i).getTeamName1().contains(searchTeam) ||
+						nflList.get(i).getTeamName2().contains(searchTeam))
+				{
+					result += (nflList.get(i).getTeamName1() + " " + nflList.get(i).getScore1() + " | "
+							+ nflList.get(i).getTeamName2() + " " + nflList.get(i).getScore2()) + "\n\n";
+				}
+			}
+		
+		System.out.println("Search Result:\n" + result);
+		
+		
 		return result;
 	}
-	
-	/*
-	public void viewMatchDataMLS()
-	{
-		
-		System.out.println(mlsList.get(0).getSportType());
-		for(int i = 0; i < mlsList.size(); i++)
-		{
-			//System.out.println(mlsList.get(i).toString());
-			System.out.println(mlsList.get(i).getTeamName1() + " " + mlsList.get(i).getScore1());
-			
-		}
-	}*/
-
 }
