@@ -1,4 +1,4 @@
-package testp2;
+package project_2;
 
 public class MatchData extends Sport {
 	private String teamName1;
@@ -11,7 +11,11 @@ public class MatchData extends Sport {
 	private int score1;
 	private int score2;
 	
-	MatchData(String sportCategory, String teamName1, String teamName2, String dateWeekday, String dateMonth, 
+	public MatchData() {
+		
+	}
+	
+	public MatchData(String sportCategory, String teamName1, String teamName2, String dateWeekday, String dateMonth, 
 			String dateDay, String dateYear, int score1, int score2)
 	{
 		super(sportCategory);
@@ -50,6 +54,6 @@ public class MatchData extends Sport {
 	{
 		return "Sport: " + super.getSportType() + "\nDate: " + getDateWeekday() + " " + getDateMonth() +
 				" " + getDateDay() + ", " + getDateYear() + " \n" +
-				getTeamName1() + " " + getScore1() + " | " + getTeamName2() + " " + getScore2();
+				getTeamName1() + " " + getScore1() + " | " + getTeamName2() + " " + getScore2() + "\n\n";
 	}
 }
