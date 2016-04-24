@@ -259,6 +259,28 @@ public class ReadMatchData {
 		return result;
 	}
 	
+		public String searchTeam(String sport, String team)
+	{
+		String searchInSport = sport;
+		String searchTeam = team;
+		String result = "";
+		
+		if(searchInSport == "MLS") //search the mlsList array
+		{
+			for(int i = 0; i < mlsList.size(); i++)
+			{
+				if(mlsList.get(i).getTeamName1().contains(searchTeam) || 
+						mlsList.get(i).getTeamName2().contains(searchTeam))
+				{
+					result += (mlsList.get(i).getTeamName1() + " " + mlsList.get(i).getScore1() + " | "
+							+ mlsList.get(i).getTeamName2() + " " + mlsList.get(i).getScore2());
+				}
+			}
+			
+		}
+		return result;
+	}
+	
 	/*
 	public void viewMatchDataMLS()
 	{
