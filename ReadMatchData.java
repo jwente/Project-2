@@ -1,4 +1,4 @@
-package testp2;
+package project_2;
 
 import java.util.Scanner;
 import java.io.*;
@@ -10,9 +10,13 @@ public class ReadMatchData {
 	//String mlsFile = "/home/jlcas/workspace/TestP2/src/mls.txt";
 	String mlsFile = "./src/mls.txt";
 	String mlbFile = "./src/mlb.txt";
+	String nbaFile = "./src/nba.txt";
+	String nflFile = "./src/nfl.txt";
 	
 	private ArrayList<MatchData> mlsList;
 	private ArrayList<MatchData> mlbList;
+	private ArrayList<MatchData> nbaList;
+	private ArrayList<MatchData> nflList;
 	
 	int count = 0;
 	
@@ -20,6 +24,8 @@ public class ReadMatchData {
 	{
 		readMLS();
 		readMLB();
+		readNBA();
+		readNFL();
 	}
 
 	public void readMLS()
@@ -112,6 +118,96 @@ public class ReadMatchData {
 		catch(IOException ex) { System.out.println("I/O error"); }
 	}
 	
+	private void readNBA() {
+
+		try{
+			//Read text from mls file
+			//System.out.println("Attempting mlsFile read");
+			FileReader fileReader = new FileReader(nbaFile);
+			
+			//Wrap fileReader in BufferReader
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			
+			nbaFile = bufferedReader.readLine();
+			nbaList = new ArrayList<>();
+					
+			while(nbaFile != null)
+			{
+				//Assign variable data from MLS file
+				String[] nbaData = nbaFile.split(", ");
+				String teamName1 = nbaData[0];
+				String tmpscore1 = nbaData[1];
+				String teamName2 = nbaData[2];
+				String tmpscore2 = nbaData[3];
+				String matchWeekday = nbaData[4];
+				String matchMnth = nbaData[5];
+				String matchDay = nbaData[6];
+				String matchYear = nbaData[7];
+				
+				int score1 = Integer.parseInt(tmpscore1.toString());
+				int score2 = Integer.parseInt(tmpscore2.toString());
+				
+				//Create MatchData object
+				MatchData nbaMatch = new MatchData("NBA", teamName1, teamName2, matchWeekday, matchMnth, 
+						matchDay, matchYear, score1, score2);
+				
+				//Add to mlsList arrayList
+				nbaList.add(nbaMatch);
+				count++;
+				nbaFile = bufferedReader.readLine();
+			}		
+			
+			bufferedReader.close();			
+			
+		}catch(FileNotFoundException ex) { System.out.println("File not found"); }
+		catch(IOException ex) { System.out.println("I/O error"); }
+	}
+	
+	private void readNFL() {
+
+		try{
+			//Read text from mls file
+			//System.out.println("Attempting mlsFile read");
+			FileReader fileReader = new FileReader(nflFile);
+			
+			//Wrap fileReader in BufferReader
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			
+			nflFile = bufferedReader.readLine();
+			nflList = new ArrayList<>();
+					
+			while(nflFile != null)
+			{
+				//Assign variable data from MLS file
+				String[] nflData = nflFile.split(", ");
+				String teamName1 = nflData[0];
+				String tmpscore1 = nflData[1];
+				String teamName2 = nflData[2];
+				String tmpscore2 = nflData[3];
+				String matchWeekday = nflData[4];
+				String matchMnth = nflData[5];
+				String matchDay = nflData[6];
+				String matchYear = nflData[7];
+				
+				int score1 = Integer.parseInt(tmpscore1.toString());
+				int score2 = Integer.parseInt(tmpscore2.toString());
+				
+				//Create MatchData object
+				MatchData nflMatch = new MatchData("NFL", teamName1, teamName2, matchWeekday, matchMnth, 
+						matchDay, matchYear, score1, score2);
+				
+				//Add to mlsList arrayList
+				nflList.add(nflMatch);
+				count++;
+				nflFile = bufferedReader.readLine();
+			}		
+			
+			bufferedReader.close();			
+			
+		}catch(FileNotFoundException ex) { System.out.println("File not found"); }
+		catch(IOException ex) { System.out.println("I/O error"); }
+	}
+	
 	public String viewMatchDataMLS()
 	{
 		String result = "";
@@ -135,7 +231,30 @@ public class ReadMatchData {
 				
 		for(int i = 0; i < mlbList.size(); i++)
 		{
-			result += (mlbList.get(i).toString());			
+			result += (mlbList.get(i).toString());
+			
+		}
+		return result;
+	}
+	
+	public String viewMatchDataNBA()
+	{
+		String result = "";
+				
+		for(int i = 0; i < nbaList.size(); i++)
+		{
+			result += (nbaList.get(i).toString());			
+		}
+		return result;
+	}
+	
+	public String viewMatchDataNFL()
+	{
+		String result = "";
+				
+		for(int i = 0; i < nflList.size(); i++)
+		{
+			result += (nflList.get(i).toString());			
 		}
 		return result;
 	}
