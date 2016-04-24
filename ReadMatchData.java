@@ -263,7 +263,6 @@ public class ReadMatchData {
 	{
 		String searchInSport = sport;
 		String searchTeam = "";
-		//String searchTeam = team.substring(0, 1).toUpperCase() + team.substring(1);
 		String result = "";
 		
 		//http://www.tutorialspoint.com/javaexamples/regular_case.htm
