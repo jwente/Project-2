@@ -319,10 +319,6 @@ public class ReadMatchData {
 							+ nflList.get(i).getTeamName2() + " " + nflList.get(i).getScore2()) + "\n\n";
 				}
 			}
-		
-		System.out.println("Search Result:\n" + result);
-		
-		
 		return result;
 	}
 }
