@@ -1,5 +1,4 @@
-package testp2;
-
+package project_2;
 
 import java.awt.EventQueue;
 
@@ -64,11 +63,6 @@ public class ApplicationPanel {
 		//comboBox.addItem(data.viewMatchDataNFL());
 		frame.getContentPane().add(comboBox);
 		
-		JButton btnSelect = new JButton("Select");
-		btnSelect.setBackground(SystemColor.inactiveCaption);
-		btnSelect.setBounds(174, 75, 150, 35);
-		frame.getContentPane().add(btnSelect);
-		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(12, 139, 758, 376);
 		frame.getContentPane().add(scrollPane);
@@ -77,11 +71,23 @@ public class ApplicationPanel {
 		scrollPane.setViewportView(textPane);
 		textPane.setBackground(SystemColor.control);
 		
-		if(comboBox.getSelectedItem() == "MLS")
-			textPane.setText(data.viewMatchDataMLS());
-		else if (comboBox.getSelectedItem() == "MLB")
-			textPane.setText(data.viewMatchDataMLB());
-		
+		JButton btnSelect = new JButton("Select");
+		btnSelect.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(comboBox.getSelectedItem() == "MLS")
+					textPane.setText(data.viewMatchDataMLS());
+				else if (comboBox.getSelectedItem() == "MLB")
+					textPane.setText(data.viewMatchDataMLB());
+				else if (comboBox.getSelectedItem() == "NBA")
+					textPane.setText(data.viewMatchDataNBA());
+				else if (comboBox.getSelectedItem() == "NFL")
+					textPane.setText(data.viewMatchDataNFL());
+			}
+		});
+		btnSelect.setBackground(SystemColor.inactiveCaption);
+		btnSelect.setBounds(174, 75, 150, 35);
+		frame.getContentPane().add(btnSelect);
+	
 		JLabel lblCategory = new JLabel("Sports Category");
 		lblCategory.setBounds(12, 27, 150, 35);
 		frame.getContentPane().add(lblCategory);
