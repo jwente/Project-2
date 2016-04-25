@@ -1,5 +1,7 @@
 package testp2;
 
+//This class is for testing only
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
