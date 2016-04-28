@@ -12,6 +12,7 @@ public class NFLData implements Results {
 
 	//Declare ArrayList of Team objects, this is viewable by other methods
 	private ArrayList<Team> teamList;
+	private ArrayList<TeamRoster> teamRosterList;
 	
 	NFLData()
 	{
@@ -63,11 +64,13 @@ public class NFLData implements Results {
 		String dir = "./src/oop_project2/teamRosters/";
 		String teamRoster = dir+teamNameIn; //get path for team roster file
 		String rosterResult = teamNameIn + " Roster:\n"; //Add a "header" to roster list
-		TeamRoster roster = null; //Initialize TeamRoster object
+		//TeamRoster roster = null; //Initialize TeamRoster object
+		
+		//System.out.println("In readTeamRoster method before try block");
 				
 		try{
 			//Read text from file
-			//System.out.println("Reading team file: " + teamRoster);
+			System.out.println("Reading team file: " + teamRoster);
 			FileReader fileReader = new FileReader(teamRoster);
 			
 			//Wrap fileReader in BufferReader
@@ -75,6 +78,7 @@ public class NFLData implements Results {
 			
 			//Read the team roster file
 			teamRoster = bufferedReader.readLine();		
+			teamRosterList = new ArrayList<>();
 			
 			while(teamRoster != null)
 			{
@@ -84,20 +88,21 @@ public class NFLData implements Results {
 				String LName = rosterData[1];
 				String FName = rosterData[2];
 				String pos = rosterData[3];	
-								
+												
 				//Read the team roster file and create a new team roster object
 				for(int i = 0; i < teamList.size(); i++)
 				{
+					//System.out.println("TeamNameIn: " + teamNameIn);
 					if(teamList.get(i).getTeamName().contains(teamNameIn))
 					{	
 						String city = teamList.get(i).getCity();
 						String teamName = teamNameIn;
 						String conference = teamList.get(i).getConference();
 						String location = teamList.get(i).getLocation();
-						
+											
 						//Create TeamRoster object
-						roster = new TeamRoster(num, LName, FName, pos, city, teamName, conference, location);
-								
+						TeamRoster roster = new TeamRoster(num, LName, FName, pos, city, teamName, conference, location);
+						teamRosterList.add(roster);		
 						//Append roster list to rosterResult
 						rosterResult += roster.getPos() + " " + roster.getNum() + " " + roster.getFName() 
 							+ " " + roster.getLName() + "\n";
@@ -137,6 +142,7 @@ public class NFLData implements Results {
 		Iterator iterator = teamList.iterator();
 		while (iterator.hasNext()) 
 		{
+			
 			//Append teams to result
 			result += iterator.next() + "\n";
 		}
@@ -169,6 +175,34 @@ public class NFLData implements Results {
 		//Call method readTeamRoster with teamNameIn as parameter
 		//Return string to calling function
 		return readTeamRoster(teamNameIn);	
+	}
+	
+	//***********************************************************************************************
+	//Search for player in teamRosterList
+	public String listPlayer(String playerIn, String teamIn)
+	{
+		String playerFound = playerIn;
+		boolean found = false;
+		String result = "";
+		
+		readTeamRoster(teamIn);
+		
+		for(int i = 0; i < teamRosterList.size(); i++)
+		{
+			
+			//System.out.println(viewTeamRoster(teamList.get(i).getTeamName().toString()));
+			if(teamRosterList.get(i).getLName().contains(playerFound))
+			{
+				playerFound = teamRosterList.get(i).getTeamName() + " " + teamRosterList.get(i).getPos() +" "+ teamRosterList.get(i).getFName() 
+						+ " " + teamRosterList.get(i).getLName() + ", number " + teamRosterList.get(i).getNum();
+				
+				found = true;
+			}
+		}
+		
+		if(found == true) return playerFound;
+		else return playerIn + " not found in " + teamIn + " roster";
+		
 	}
 	
 	
