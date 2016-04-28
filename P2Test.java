@@ -19,6 +19,7 @@ public class P2Test {
 		System.out.println(teamData.searchDivision("NFC", "East"));
 		System.out.println(teamData.viewTeamRoster("Cowboys"));
 		System.out.println(teamData.listPlayer("Romo", "Cowboys"));
+		System.out.println(teamData.listPlayer("Brady", "Cowboys"));
 		
 		//Haven't tested this fully
 		//System.out.println(teamData.getTeamImage("Cowboys"));
