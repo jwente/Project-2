@@ -15,15 +15,15 @@ public class searchByDivision {
 		
 		confList = teamList;
 		
-		String result = "";
+		String result = conferenceIn + " " + locationIn + "\n";
+		
 		
 		if(conference == "NFC" || conference == "AFC") //search the list for NFC or AFC
 			for(int i = 0; i < confList.size(); i++)
 			{
 				if(confList.get(i).getConference().contains(conference) && confList.get(i).getLocation().contains(location))
 				{
-					result += (confList.get(i).getConference() + " " + confList.get(i).getLocation() + " " + 
-							confList.get(i).getCity() + " " + confList.get(i).getTeamName() + "\n");
+					result += (confList.get(i).getCity() + " " + confList.get(i).getTeamName() + "\n");
 				}
 			}
 		return result;

@@ -14,15 +14,14 @@ public class searchByConference {
 		
 		confList = teamList;
 		
-		String result = "";
+		String result = conferenceIn + " Teams\n";
 		
 		if(conference == "NFC" || conference == "AFC") //search the list for NFC or AFC
 			for(int i = 0; i < confList.size(); i++)
-			{
+			{		
 				if(confList.get(i).getConference().contains(conference))
 				{
-					result += (confList.get(i).getConference() + " " + confList.get(i).getLocation() + " " + 
-							confList.get(i).getCity() + " " + confList.get(i).getTeamName() + "\n");
+					result += (confList.get(i).getCity() + " " + confList.get(i).getTeamName() + "\n");
 				}
 			}
 		return result;
