@@ -1,7 +1,6 @@
 package oop_project2;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -208,6 +207,15 @@ public class NFLData implements Results {
 		return searchMatchByTeam.team(teamName, nflMatchList).toString();	
 	}// end viewMatchByTeam
 	//**********************************************************************************************
+	
+	//viewH2H returns matches containing team name 1 and team name 2 specified by user
+	//From main class call:
+	//System.out.println(teamData.viewH2H("Patriots", "Dolphins"));
+	//System.out.println(teamData.viewH2H("Cowboys", "Patriots"));
+	public String viewH2H(String teamName1, String teamName2)
+	{
+		return searchH2H.teamsH2H(teamName1, teamName2, nflMatchList).toString();
+	}
 	
 	//TeamImage method not tested
 	public TeamImage getTeamImage(String teamName)
