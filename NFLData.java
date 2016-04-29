@@ -199,8 +199,17 @@ public class NFLData implements Results {
 	}// end viewMatchWeek
 	//**********************************************************************************************	
 	
+	//viewMatchByTeam returns list of matches containing team name specified by user
+	//From main class call:
+	//System.out.println(teamData.viewMatchByTeam("Falcons"));
+	public String viewMatchByTeam(String teamName)
+	{
+		//Returns list of matches containing specified team name
+		return searchMatchByTeam.team(teamName, nflMatchList).toString();	
+	}// end viewMatchByTeam
+	//**********************************************************************************************
+	
 	//TeamImage method not tested
-
 	public TeamImage getTeamImage(String teamName)
 	{
 		String dir = "./src/oop_project2/teamIcons/";
