@@ -217,6 +217,19 @@ public class NFLData implements Results {
 		return searchH2H.teamsH2H(teamName1, teamName2, nflMatchList).toString();
 	}
 	
+	//**********************************************************************************************
+	public String viewTeamWins(String teamName)
+	{
+		return searchTeamWins.teamWin(teamName, nflMatchList).toString();
+	}
+	
+	//**********************************************************************************************
+	public String viewTeamLoses(String teamName)
+	{
+		return searchTeamLoses.teamLoses(teamName, nflMatchList).toString();
+	}
+	//**********************************************************************************************
+	
 	//TeamImage method not tested
 	public TeamImage getTeamImage(String teamName)
 	{
