@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class searchMatchWeek {
 	
-	public static String viewWeek(String matchWeek, ArrayList<MatchData> matchList)
+	public static String viewWeek(String matchWeek, ArrayList<MatchData> matchListAbbr)
 	{
 		String weekResult = "";
 		
-		for(int i = 0; i < matchList.size(); i++)
+		for(int i = 0; i < matchListAbbr.size(); i++)
 		{	
-			if(matchList.get(i).getMatchWeek().contains(matchWeek))
+			if(matchListAbbr.get(i).getMatchWeek().contains(matchWeek))
 			{
-				weekResult += matchList.get(i).getTeamName1() + " " + matchList.get(i).getScore1() + " " +
-						matchList.get(i).getScore2() + " " + matchList.get(i).getTeamName2() + " | ";
+				weekResult += matchListAbbr.get(i).getTeamName1() + " " + matchListAbbr.get(i).getScore1() + " " +
+						matchListAbbr.get(i).getScore2() + " " + matchListAbbr.get(i).getTeamName2() + " | ";
 			}
 		}
 		

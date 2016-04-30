@@ -15,12 +15,14 @@ public class NFLData implements Results {
 	private ArrayList<Team> teamList;
 	private ArrayList<TeamRoster> teamRosterList;
 	private ArrayList<MatchData> nflMatchList;
+	private ArrayList<MatchData> nflMatchListAbbr;
 	
 	//Constructor
 	NFLData()
 	{
 		String file = "./src/oop_project2/nflteams/nflteams.txt";
 		readMatchData();
+		readMatchDataAbbr();
 		//readTeamRoster1();
 		
 		try{
@@ -181,6 +183,65 @@ public class NFLData implements Results {
 	} //end ReadMatchData
 	//**********************************************************************************************
 	
+	//Method readMatchData reads the nflmatches.txt file and populates the variables
+		//in the nflData array, creates an nflMatch MatchData object
+		public String readMatchDataAbbr()
+		{
+			
+			String dir = "./src/oop_project2/matches/";
+			String nflMatchFileAbbr = dir+"nflmatches_abbr.txt";
+			String matchResultAbbr = "";
+			
+			try{
+					//Read text from nflmatches.txt file
+					//System.out.println("Attempting to read " + nflMatchFile);
+					FileReader fileReader = new FileReader(nflMatchFileAbbr);
+					
+					//Wrap fileReader in BufferReader
+					BufferedReader bufferedReader = new BufferedReader(fileReader);
+					
+					nflMatchFileAbbr = bufferedReader.readLine();
+					nflMatchListAbbr = new ArrayList<>();
+							
+					while(nflMatchFileAbbr != null)
+					{
+						//Assign variable data from MLS file
+						String[] nflData = nflMatchFileAbbr.split(", ");
+						String teamName1 = nflData[0];
+						String tmpscore1 = nflData[1];
+						String teamName2 = nflData[2];
+						String tmpscore2 = nflData[3];
+						String matchWeekday = nflData[4];
+						String matchMnth = nflData[5];
+						String matchDay = nflData[6];
+						String matchYear = nflData[7];
+						String matchWeek = nflData[8];
+						
+						int score1 = Integer.parseInt(tmpscore1.toString());
+						int score2 = Integer.parseInt(tmpscore2.toString());
+						
+						//Create MatchData object
+						MatchData nflMatchAbbr = new MatchData(teamName1, teamName2, matchWeekday, matchMnth, 
+								matchDay, matchYear, score1, score2, matchWeek);
+						
+						//Append data to matchResult
+						matchResultAbbr += nflMatchAbbr.toString();
+						
+						//Add nflMatch objects to nflMatchList ArrayList
+						nflMatchListAbbr.add(nflMatchAbbr);
+						
+						//Read next line in nflMatchFile
+						nflMatchFileAbbr = bufferedReader.readLine();
+					}		
+					
+					bufferedReader.close();			
+					
+				}catch(FileNotFoundException ex) { System.out.println("File not found"); }
+				catch(IOException ex) { System.out.println("I/O error"); }
+			return matchResultAbbr; //return the match result string
+		} //end ReadMatchData
+		//**********************************************************************************************
+	
 	
 	//**********************************************************************************************
 	//The functions viewMatchWeek, viewTeams, searchConference, searchDivision, viewTeamRoster all 
@@ -193,7 +254,7 @@ public class NFLData implements Results {
 	public String viewMatchWeek(String week)
 	{
 		//Call method searchMatchWeek's static method viewWeek with week and array list parameters
-		String weekResult = searchMatchWeek.viewWeek(week, nflMatchList).toString();
+		String weekResult = searchMatchWeek.viewWeek(week, nflMatchListAbbr).toString();
 		return weekResult; 
 	}// end viewMatchWeek
 	//**********************************************************************************************	
