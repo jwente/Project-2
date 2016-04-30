@@ -17,6 +17,7 @@ public class Team extends NFLTeam {
 	@Override
 	public String toString()
 	{
-		return getCity() + " " + getTeamName() +  " from " + getConference() + " " + getLocation();
+		return getTeamName();
+		//return getCity() + " " + getTeamName() +  " from " + getConference() + " " + getLocation();
 	}
 }
