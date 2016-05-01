@@ -427,7 +427,7 @@ public class ApplicationPanel {
 				TeamsPanel.setVisible(false);
 				panel.setVisible(true);
 				textPane_1.setVisible(true);
-				textPane_1.setText(data.viewTeamWins(comboBox_2.getSelectedItem().toString()));
+				textPane_1.setText(data.viewTeamLoses(comboBox_2.getSelectedItem().toString()));
 			}
 		});
 		btnTeamLoses.setFont(new Font("Calibri", Font.PLAIN, 20));
