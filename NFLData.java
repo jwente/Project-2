@@ -356,7 +356,7 @@ public class NFLData implements Results {
 	{
 		//Call method readTeamRoster with teamNameIn as parameter
 		//Return string to calling function
-		return readTeamRoster(teamNameIn);	
+		return readTeamRoster(makeUpperCase(teamNameIn));
 	} //end viewTeamRoster
 	//***********************************************************************************************
 	
@@ -386,5 +386,11 @@ public class NFLData implements Results {
 		else return playerIn + " not found in " + teamIn + " roster \n";
 	} //end listPlayer
 	//***********************************************************************************************
+	
+	public String makeUpperCase(String teamNameIn)
+	{		
+		String teamNameUpper = teamNameIn.substring(0, 1).toUpperCase() + teamNameIn.substring(1);	
+		return teamNameUpper;
+	}
 	
 }
