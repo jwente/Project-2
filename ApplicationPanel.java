@@ -250,6 +250,8 @@ public class ApplicationPanel {
 		{
 			public void actionPerformed(ActionEvent arg0) 
 			{
+				MainPanel.setVisible(false);
+				TeamsPanel.setVisible(true);
 				Teams.setVisible(true);
 				frmNflApplication.repaint();	
 				NFLData data = new NFLData();
@@ -267,6 +269,8 @@ public class ApplicationPanel {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
+				MainPanel.setVisible(false);
+				TeamsPanel.setVisible(true);
 				Teams.setVisible(true);
 				frmNflApplication.repaint();
 				NFLData data = new NFLData();
@@ -298,34 +302,58 @@ public class ApplicationPanel {
 				Teams.setVisible(true);
 				if(comboBox_1.getSelectedItem() == "AFC North")
 				{
+					MainPanel.setVisible(false);
+					TeamsPanel.setVisible(true);
+					Teams.setVisible(true);
 					Teams.setText(data.searchDivision("AFC", "North"));
 				}
 				else if(comboBox_1.getSelectedItem() == "AFC West")
 				{
+					MainPanel.setVisible(false);
+					TeamsPanel.setVisible(true);
+					Teams.setVisible(true);
 					Teams.setText(data.searchDivision("AFC", "West"));
 				}
 				else if(comboBox_1.getSelectedItem() == "AFC South")
 				{
+					MainPanel.setVisible(false);
+					TeamsPanel.setVisible(true);
+					Teams.setVisible(true);
 					Teams.setText(data.searchDivision("AFC", "South"));
 				}
 				else if(comboBox_1.getSelectedItem() == "AFC East")
 				{
+					MainPanel.setVisible(false);
+					TeamsPanel.setVisible(true);
+					Teams.setVisible(true);
 					Teams.setText(data.searchDivision("AFC", "East"));
 				}
 				else if(comboBox_1.getSelectedItem() == "NFC North")
 				{
+					MainPanel.setVisible(false);
+					TeamsPanel.setVisible(true);
+					Teams.setVisible(true);
 					Teams.setText(data.searchDivision("NFC", "North"));
 				}
 				else if(comboBox_1.getSelectedItem() == "NFC West")
 				{
+					MainPanel.setVisible(false);
+					TeamsPanel.setVisible(true);
+					Teams.setVisible(true);
 					Teams.setText(data.searchDivision("NFC", "West"));
 				}
 				else if(comboBox_1.getSelectedItem() == "NFC South")
 				{
+					MainPanel.setVisible(false);
+					TeamsPanel.setVisible(true);
+					Teams.setVisible(true);
 					Teams.setText(data.searchDivision("NFC", "South"));
 				}
 				else if(comboBox_1.getSelectedItem() == "NFC East")
 				{
+					MainPanel.setVisible(false);
+					TeamsPanel.setVisible(true);
+					Teams.setVisible(true);
 					Teams.setText(data.searchDivision("NFC", "East"));
 				}
 			}
@@ -360,9 +388,11 @@ public class ApplicationPanel {
 		{
 			public void actionPerformed(ActionEvent evt) 
 			{
-				
+				frmNflApplication.repaint();
 				MainPanel.setVisible(false);
+				TeamsPanel.setVisible(false);
 				panel.setVisible(true);
+				panel.repaint();
 				textPane_1.setVisible(true);
 				//Image teamIcon = new ImageIcon(this.getClass().getResource()).getImage();
 				//lblNewLabel.setIcon(teamIcon);
@@ -377,6 +407,10 @@ public class ApplicationPanel {
 		{
 			public void actionPerformed(ActionEvent arg0) 
 			{
+				MainPanel.setVisible(false);
+				TeamsPanel.setVisible(false);
+				panel.setVisible(true);
+				textPane_1.setVisible(true);
 				textPane_1.setText(data.viewTeamWins(comboBox_2.getSelectedItem().toString()));
 			}
 		});
@@ -389,6 +423,10 @@ public class ApplicationPanel {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
+				MainPanel.setVisible(false);
+				TeamsPanel.setVisible(false);
+				panel.setVisible(true);
+				textPane_1.setVisible(true);
 				textPane_1.setText(data.viewTeamWins(comboBox_2.getSelectedItem().toString()));
 			}
 		});
@@ -422,6 +460,10 @@ public class ApplicationPanel {
 		{
 			public void actionPerformed(ActionEvent arg0) 
 			{
+				MainPanel.setVisible(false);
+				TeamsPanel.setVisible(true);
+				panel.setVisible(false);
+				textPane_1.setVisible(false);
 				Teams.setVisible(true);
 				frmNflApplication.repaint();
 				NFLData data = new NFLData();
