@@ -391,8 +391,8 @@ public class ApplicationPanel {
 				frmNflApplication.repaint();
 				MainPanel.setVisible(false);
 				TeamsPanel.setVisible(false);
+				Teams.setVisible(false);
 				panel.setVisible(true);
-				panel.repaint();
 				textPane_1.setVisible(true);
 				//Image teamIcon = new ImageIcon(this.getClass().getResource()).getImage();
 				//lblNewLabel.setIcon(teamIcon);
