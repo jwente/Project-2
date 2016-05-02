@@ -97,6 +97,12 @@ public class ApplicationPanel {
 		MainPanel.setBackground(SystemColor.control);
 		MainPanel.setLayout(null);
 		
+		JPanel panel = new JPanel();
+		panel.setBounds(234, 164, 736, 476);
+		frmNflApplication.getContentPane().add(panel);
+		panel.setVisible(false);
+		panel.setLayout(null);
+		
 		//********************************************************************************************
 		//Create a JPanel to contain the text pane and label to display team icon and information  
 		//********************************************************************************************
@@ -129,6 +135,15 @@ public class ApplicationPanel {
 		frmNflApplication.getContentPane().add(textPane);
 		
 		//********************************************************************************************
+		//Create JLabel to hold the NFL logo image
+		//********************************************************************************************
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setBounds(73, 0, 663, 365);
+		MainPanel.add(lblNewLabel_1);
+		Image img = new ImageIcon(this.getClass().getResource("/nfl.jpg")).getImage();
+		lblNewLabel_1.setIcon(new ImageIcon(img));
+		
+		//********************************************************************************************
 		//Create JComboBox to hold the 16 weeks of the NFL season
 		//********************************************************************************************
 		JComboBox comboBox = new JComboBox();
@@ -159,82 +174,147 @@ public class ApplicationPanel {
 				if(comboBox.getSelectedIndex() == 1)
 				{
 					textPane.setText(data.viewMatchWeek("Week 1"));
-					MainPanel.repaint();
+					TeamsPanel.setVisible(false);
+					Teams.setVisible(false);
+					panel.setVisible(false);
+					MainPanel.setVisible(true);
+					lblNewLabel_1.setVisible(true);
 				}
 				else if(comboBox.getSelectedIndex() == 2)
 				{
 					textPane.setText(data.viewMatchWeek("Week 2"));
+					TeamsPanel.setVisible(false);
+					Teams.setVisible(false);
+					panel.setVisible(false);
+					MainPanel.setVisible(true);
+					lblNewLabel_1.setVisible(true);
 					MainPanel.repaint();
 				}
 				else if(comboBox.getSelectedIndex() == 3)
 				{
 					textPane.setText(data.viewMatchWeek("Week 3"));
-					MainPanel.repaint();
+					TeamsPanel.setVisible(false);
+					Teams.setVisible(false);
+					panel.setVisible(false);
+					MainPanel.setVisible(true);
+					lblNewLabel_1.setVisible(true);
 				}
 				else if(comboBox.getSelectedIndex() == 4)
 				{
 					textPane.setText(data.viewMatchWeek("Week 4"));
-					MainPanel.repaint();
+					TeamsPanel.setVisible(false);
+					Teams.setVisible(false);
+					panel.setVisible(false);
+					MainPanel.setVisible(true);
+					lblNewLabel_1.setVisible(true);
 				}
 				else if(comboBox.getSelectedIndex() == 5)
 				{
 					textPane.setText(data.viewMatchWeek("Week 5"));
-					MainPanel.repaint();
+					TeamsPanel.setVisible(false);
+					Teams.setVisible(false);
+					panel.setVisible(false);
+					MainPanel.setVisible(true);
+					lblNewLabel_1.setVisible(true);
 				}
 				else if(comboBox.getSelectedIndex() == 6)
 				{
 					textPane.setText(data.viewMatchWeek("Week 6"));
-					MainPanel.repaint();
+					TeamsPanel.setVisible(false);
+					Teams.setVisible(false);
+					panel.setVisible(false);
+					MainPanel.setVisible(true);
+					lblNewLabel_1.setVisible(true);
 				}
 				else if(comboBox.getSelectedIndex() == 7)
 				{
 					textPane.setText(data.viewMatchWeek("Week 7"));
-					MainPanel.repaint();
+					TeamsPanel.setVisible(false);
+					Teams.setVisible(false);
+					panel.setVisible(false);
+					MainPanel.setVisible(true);
+					lblNewLabel_1.setVisible(true);
 				}
 				else if(comboBox.getSelectedIndex() == 8)
 				{
 					textPane.setText(data.viewMatchWeek("Week 8"));
-					MainPanel.repaint();
+					TeamsPanel.setVisible(false);
+					Teams.setVisible(false);
+					panel.setVisible(false);
+					MainPanel.setVisible(true);
+					lblNewLabel_1.setVisible(true);
 				}
 				else if(comboBox.getSelectedIndex() == 9)
 				{
 					textPane.setText(data.viewMatchWeek("Week 9"));
-					MainPanel.repaint();
+					TeamsPanel.setVisible(false);
+					Teams.setVisible(false);
+					panel.setVisible(false);
+					MainPanel.setVisible(true);
+					lblNewLabel_1.setVisible(true);
 				}
 				else if(comboBox.getSelectedIndex() == 10)
 				{
 					textPane.setText(data.viewMatchWeek("Week 10"));
-					MainPanel.repaint();
+					TeamsPanel.setVisible(false);
+					Teams.setVisible(false);
+					panel.setVisible(false);
+					MainPanel.setVisible(true);
+					lblNewLabel_1.setVisible(true);
 				}
 				else if(comboBox.getSelectedIndex() == 11)
 				{
 					textPane.setText(data.viewMatchWeek("Week 11"));
-					MainPanel.repaint();
+					TeamsPanel.setVisible(false);
+					Teams.setVisible(false);
+					panel.setVisible(false);
+					MainPanel.setVisible(true);
+					lblNewLabel_1.setVisible(true);
 				}
 				else if(comboBox.getSelectedIndex() == 12)
 				{
 					textPane.setText(data.viewMatchWeek("Week 12"));
-					MainPanel.repaint();
+					TeamsPanel.setVisible(false);
+					Teams.setVisible(false);
+					panel.setVisible(false);
+					MainPanel.setVisible(true);
+					lblNewLabel_1.setVisible(true);
 				}
 				else if(comboBox.getSelectedIndex() == 13)
 				{
 					textPane.setText(data.viewMatchWeek("Week 13"));
-					MainPanel.repaint();
+					TeamsPanel.setVisible(false);
+					Teams.setVisible(false);
+					panel.setVisible(false);
+					MainPanel.setVisible(true);
+					lblNewLabel_1.setVisible(true);
 				}
 				else if(comboBox.getSelectedIndex() == 14)
 				{
 					textPane.setText(data.viewMatchWeek("Week 14"));
-					MainPanel.repaint();
+					TeamsPanel.setVisible(false);
+					Teams.setVisible(false);
+					panel.setVisible(false);
+					MainPanel.setVisible(true);
+					lblNewLabel_1.setVisible(true);
 				}
 				else if(comboBox.getSelectedIndex() == 15)
 				{
 					textPane.setText(data.viewMatchWeek("Week 15"));
-					MainPanel.repaint();
+					TeamsPanel.setVisible(false);
+					Teams.setVisible(false);
+					panel.setVisible(false);
+					MainPanel.setVisible(true);
+					lblNewLabel_1.setVisible(true);
 				}
 				else if(comboBox.getSelectedIndex() == 16)
 				{
 					textPane.setText(data.viewMatchWeek("Week 16"));
-					MainPanel.repaint();
+					TeamsPanel.setVisible(false);
+					Teams.setVisible(false);
+					panel.setVisible(false);
+					MainPanel.setVisible(true);
+					lblNewLabel_1.setVisible(true);
 				}
 			}
 			
@@ -251,6 +331,7 @@ public class ApplicationPanel {
 			public void actionPerformed(ActionEvent arg0) 
 			{
 				MainPanel.setVisible(false);
+				panel.setVisible(false);
 				TeamsPanel.setVisible(true);
 				Teams.setVisible(true);
 				frmNflApplication.repaint();	
@@ -270,6 +351,7 @@ public class ApplicationPanel {
 			public void actionPerformed(ActionEvent e) 
 			{
 				MainPanel.setVisible(false);
+				panel.setVisible(false);
 				TeamsPanel.setVisible(true);
 				Teams.setVisible(true);
 				frmNflApplication.repaint();
@@ -303,6 +385,7 @@ public class ApplicationPanel {
 				if(comboBox_1.getSelectedItem() == "AFC North")
 				{
 					MainPanel.setVisible(false);
+					panel.setVisible(false);
 					TeamsPanel.setVisible(true);
 					Teams.setVisible(true);
 					Teams.setText(data.searchDivision("AFC", "North"));
@@ -310,6 +393,7 @@ public class ApplicationPanel {
 				else if(comboBox_1.getSelectedItem() == "AFC West")
 				{
 					MainPanel.setVisible(false);
+					panel.setVisible(false);
 					TeamsPanel.setVisible(true);
 					Teams.setVisible(true);
 					Teams.setText(data.searchDivision("AFC", "West"));
@@ -317,6 +401,7 @@ public class ApplicationPanel {
 				else if(comboBox_1.getSelectedItem() == "AFC South")
 				{
 					MainPanel.setVisible(false);
+					panel.setVisible(false);
 					TeamsPanel.setVisible(true);
 					Teams.setVisible(true);
 					Teams.setText(data.searchDivision("AFC", "South"));
@@ -324,6 +409,7 @@ public class ApplicationPanel {
 				else if(comboBox_1.getSelectedItem() == "AFC East")
 				{
 					MainPanel.setVisible(false);
+					panel.setVisible(false);
 					TeamsPanel.setVisible(true);
 					Teams.setVisible(true);
 					Teams.setText(data.searchDivision("AFC", "East"));
@@ -331,6 +417,7 @@ public class ApplicationPanel {
 				else if(comboBox_1.getSelectedItem() == "NFC North")
 				{
 					MainPanel.setVisible(false);
+					panel.setVisible(false);
 					TeamsPanel.setVisible(true);
 					Teams.setVisible(true);
 					Teams.setText(data.searchDivision("NFC", "North"));
@@ -338,6 +425,7 @@ public class ApplicationPanel {
 				else if(comboBox_1.getSelectedItem() == "NFC West")
 				{
 					MainPanel.setVisible(false);
+					panel.setVisible(false);
 					TeamsPanel.setVisible(true);
 					Teams.setVisible(true);
 					Teams.setText(data.searchDivision("NFC", "West"));
@@ -345,6 +433,7 @@ public class ApplicationPanel {
 				else if(comboBox_1.getSelectedItem() == "NFC South")
 				{
 					MainPanel.setVisible(false);
+					panel.setVisible(false);
 					TeamsPanel.setVisible(true);
 					Teams.setVisible(true);
 					Teams.setText(data.searchDivision("NFC", "South"));
@@ -352,6 +441,7 @@ public class ApplicationPanel {
 				else if(comboBox_1.getSelectedItem() == "NFC East")
 				{
 					MainPanel.setVisible(false);
+					panel.setVisible(false);
 					TeamsPanel.setVisible(true);
 					Teams.setVisible(true);
 					Teams.setText(data.searchDivision("NFC", "East"));
@@ -364,20 +454,16 @@ public class ApplicationPanel {
 		//********************************************************************************************
 		//
 		//********************************************************************************************
-		JPanel panel = new JPanel();
-		panel.setBounds(234, 164, 736, 476);
-		frmNflApplication.getContentPane().add(panel);
-		panel.setVisible(false);
-		panel.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(12, 13, 101, 101);
-		panel.add(lblNewLabel);
+		JLabel lblTeamIcon = new JLabel("");
+		lblTeamIcon.setVisible(false);
+		lblTeamIcon.setBounds(12, 13, 101, 101);
+		panel.add(lblTeamIcon);
 		
 		JTextPane textPane_1 = new JTextPane();
 		textPane_1.setFont(new Font("Calibri", Font.PLAIN, 20));
 		textPane_1.setBackground(SystemColor.control);
 		textPane_1.setBounds(202, 0, 522, 476);
+		textPane_1.setVisible(false);
 		panel.add(textPane_1);
 		
 		JComboBox comboBox_2 = new JComboBox();
@@ -394,8 +480,200 @@ public class ApplicationPanel {
 				Teams.setVisible(false);
 				panel.setVisible(true);
 				textPane_1.setVisible(true);
-				//Image teamIcon = new ImageIcon(this.getClass().getResource()).getImage();
-				//lblNewLabel.setIcon(teamIcon);
+				textPane_1.repaint();
+				if(comboBox_2.getSelectedIndex() == 0)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Bills.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 1)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Dolphis.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 2)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Patriots.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 3)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Jets.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 4)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Ravens.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 5)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Bengals.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 6)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Browns.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 7)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Steelers.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 8)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Texans.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 9)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Colts.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 10)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Jaguars.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 11)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Titans.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 12)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Broncons.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 13)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Chiefs.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 14)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Raiders.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 15)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Chargers.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 16)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Cowboys.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 17)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Giants.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 18)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Eagles.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 19)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Redskins.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 20)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Bears.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 21)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Lions.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 22)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Packers.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 23)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Vikings.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 24)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Falcons.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 25)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Panthers.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 26)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Saints.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 27)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Buccaneers.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 28)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Cardinals.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 29)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Rams.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 30)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/49ers.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				else if(comboBox_2.getSelectedIndex() == 31)
+				{
+					Image teamIcon = new ImageIcon(this.getClass().getResource("/Seahawks.png")).getImage();
+					lblTeamIcon.setVisible(true);
+					lblTeamIcon.setIcon(new ImageIcon(teamIcon));
+				}
+				lblTeamIcon.repaint();
 				textPane_1.setText(data.viewTeamRoster(comboBox_2.getSelectedItem().toString()));
 				
 			}
@@ -472,14 +750,5 @@ public class ApplicationPanel {
 		});
 		btnsearchTeam.setBounds(20, 459, 180, 50);
 		frmNflApplication.getContentPane().add(btnsearchTeam);
-		
-		//********************************************************************************************
-		//Create JLabel to hold the NFL logo image
-		//********************************************************************************************
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBounds(73, 0, 663, 365);
-		MainPanel.add(lblNewLabel_1);
-		Image img = new ImageIcon(this.getClass().getResource("/nfl.jpg")).getImage();
-		lblNewLabel_1.setIcon(new ImageIcon(img));
 	}
 }
